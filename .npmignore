@@ -1,0 +1,22 @@
+# IDEs
+.idea
+.vscode
+.editorconfig
+
+# After-build files
+dist/tsconfig.tsbuildinfo
+types/tsconfig.tsbuildinfo
+
+# Development files
+.env
+.eslintignore
+.eslintrc.json
+commitlint.config.js
+discordoo.json
+docs.md
+jest.config.js
+typedoc.js
+tsconfig.json
+
+# Other
+.github

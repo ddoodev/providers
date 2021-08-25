@@ -23,7 +23,7 @@
 <hr>
 
 # Providers
-Repository for interfaces that must be implemented by custom providers for Discordoo.
+Repository for interfaces that must be implemented by custom providers for Discordoo (typescript only).
 
 ## How to use
 ```sh
@@ -35,7 +35,7 @@ npm i @discordoo/providers
 import { CacheProvider } from '@discordoo/providers'
 
 class CustomCacheProvider implements CacheProvider {
-  constructor(client, some, options, for, cache, provider) {}
+  constructor(client/*, some, options, for, cache, provider*/) {}
 }
 ```
 ```ts
@@ -83,3 +83,4 @@ client.on('slashCommand', command => { // automatically detects the Command type
   let oh = command.oh
   oh = 'true' // Error: Type 'string' is not assignable to type 'boolean'.
 })
+```

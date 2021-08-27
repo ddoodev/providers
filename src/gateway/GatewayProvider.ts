@@ -22,14 +22,17 @@ export interface GatewayProvider extends Provider {
    * */
   connect(shards?: GatewayShardsInfo): Promise<unknown>
 
-  /** Disconnect from gateway */
-  disconnect(): Promise<unknown>
+  /**
+   * Disconnect from gateway
+   * @param shards - id of shards to disconnect
+   * */
+  disconnect(shards?: number[]): Promise<unknown>
 
   /**
    * Disconnect from gateway, then set new shards configuration and connect
    * @param shards - information about shards to serve
    * */
-  shards(shards: GatewayShardsInfo): Promise<unknown>
+  reorganizeShards(shards: GatewayShardsInfo): Promise<unknown>
 
   /**
    * Emit event to the gateway manager or remote host (e.g. rabbitmq), but not to the client directly
@@ -41,12 +44,30 @@ export interface GatewayProvider extends Provider {
   /**
    * Send some data to the gateway
    * @param data - data to send
+   * @param shards - id of shards to send data to
    * */
-  send(data: Record<string, any>): unknown
+  send(data: Record<string, any>, shards?: number[]): unknown
 
   /**
    * Get gateway bot information
    * @see https://discord.com/developers/docs/topics/gateway#get-gateway-bot
    * */
   getGateway(): Promise<GatewayBotInfo>
+
+  /**
+   * Insert the shard in the spawn queue. You can simply use GatewayManager.waitShardSpawnTurn for this (client.internals.gateway)
+   * @param shardID - id of the shard to insert into the queue
+   * */
+  waitShardSpawnTurn(shardID: number): Promise<unknown>
+
+  /**
+   * Get the network latency of the shards websocket
+   * */
+  ping(): number
+
+  /**
+   * Get the network latency of the shards websocket separately
+   * */
+  ping(shards: number[]): number[]
+
 }

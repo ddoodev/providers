@@ -3,4 +3,6 @@ export interface RawAttachment {
   name: string
   /** Attachment binary data */
   data: ArrayBuffer | Buffer
+  /** Whether this attachment is ephemeral */
+  ephemeral: boolean
 }

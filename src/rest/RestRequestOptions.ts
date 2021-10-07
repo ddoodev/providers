@@ -6,4 +6,6 @@ export interface RestRequestOptions {
   reason?: string
   /** Auth to use for this request */
   auth?: AuthLike
+  /** Whether use any auth for request or not */
+  useAuth?: boolean
 }

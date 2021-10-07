@@ -29,6 +29,12 @@ export interface GatewayProvider extends Provider {
   disconnect(shards?: number[]): Promise<unknown>
 
   /**
+   * Reconnect shard(s)
+   * @param shards - id of shards to reconnect
+   * */
+  reconnect(shards?: number[]): Promise<unknown>
+
+  /**
    * Disconnect from gateway, then set new shards configuration and connect
    * @param shards - information about shards to serve
    * */
@@ -56,9 +62,9 @@ export interface GatewayProvider extends Provider {
 
   /**
    * Insert the shard in the spawn queue. You can simply use GatewayManager.waitShardSpawnTurn for this (client.internals.gateway)
-   * @param shardID - id of the shard to insert into the queue
+   * @param shardId - id of the shard to insert into the queue
    * */
-  waitShardSpawnTurn(shardID: number): Promise<unknown>
+  waitShardSpawnTurn(shardId: number): Promise<unknown>
 
   /**
    * Get the network latency of the shards websocket
@@ -70,4 +76,8 @@ export interface GatewayProvider extends Provider {
    * */
   ping(shards: number[]): number[]
 
+  ping(shards?: number[]): number | number[]
+
+  // TODO: presenceUpdate
+  // TODO: requestGuildMembers
 }

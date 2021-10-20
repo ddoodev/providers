@@ -99,6 +99,13 @@ export interface CacheProvider extends Provider {
   ): Promise<void>
 
   /**
+   * Clear all cache from storage
+   * @param keyspace - keyspace in which to clear
+   * @param storage - storage in which to clear
+   */
+  clear?(keyspace: string, storage: CacheStorageKey): Promise<boolean>
+
+  /**
    * Get size of cache in storage
    * @param keyspace - keyspace in which to search
    * @param storage - storage in which to search

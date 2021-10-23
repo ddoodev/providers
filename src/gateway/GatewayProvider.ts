@@ -1,6 +1,8 @@
 import { GatewayShardsInfo } from '@src/gateway/GatewayShardsInfo'
 import { Provider } from '@src/Provider'
 import { GatewayBotInfo } from '@src/gateway/GatewayBotInfo'
+import { GatewaySendOptions } from '@src/gateway/GatewaySendOptions'
+import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
 
 /**
  * Represents a gateway provider. Custom gateway providers must implement it.
@@ -50,9 +52,9 @@ export interface GatewayProvider extends Provider {
   /**
    * Send some data to the gateway
    * @param data - data to send
-   * @param shards - id of shards to send data to
+   * @param options - send options
    * */
-  send(data: Record<string, any>, shards?: number[]): unknown
+  send(data: GatewaySendPayloadLike, options?: GatewaySendOptions): unknown
 
   /**
    * Get gateway bot information
@@ -72,11 +74,11 @@ export interface GatewayProvider extends Provider {
   ping(): number
 
   /**
-   * Get the network latency of the shards websocket separately
+   * Get the network latency of the shards websocket separately [ [ shardId, latency ], [ shardId, latency ] ]
    * */
-  ping(shards: number[]): number[]
+  ping(shards: number[]): Array<[ number, number ]>
 
-  ping(shards?: number[]): number | number[]
+  ping(shards?: number[]): number | Array<[ number, number ]>
 
   // TODO: presenceUpdate
   // TODO: requestGuildMembers

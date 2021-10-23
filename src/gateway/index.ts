@@ -1,3 +1,6 @@
+export { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
+export { GatewaySendOptions } from '@src/gateway/GatewaySendOptions'
 export { GatewayShardsInfo } from '@src/gateway/GatewayShardsInfo'
 export { GatewayProvider } from '@src/gateway/GatewayProvider'
 export { GatewayBotInfo } from '@src/gateway/GatewayBotInfo'
+export { GatewayOpCodes } from '@src/gateway/GatewayOpCodes'

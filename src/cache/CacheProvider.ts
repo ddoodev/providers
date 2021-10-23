@@ -160,4 +160,32 @@ export interface CacheProvider extends Provider {
     keyspace: string, storage: CacheStorageKey, predicate: (value: V, key: K, provider: P) => boolean | Promise<boolean>
   ): Promise<V | undefined>
 
+  /**
+   * Execute a provided function once for each cache element and count the number of elements for which the function returned true
+   * @param keyspace - keyspace in which to execute
+   * @param storage - storage in which to execute
+   * @param predicate - function to execute
+   * */
+  count?<K = string, V = any, P extends CacheProvider = CacheProvider>(
+    keyspace: string, storage: CacheStorageKey,
+    predicate: (value: V, key: K, provider: P) => boolean | Promise<boolean>
+  ): Promise<number>
+
+  /**
+   * Execute a provided functions once for each cache element and count the number of elements for which the functions returned true.
+   * The order of responses depends on the order of the passed functions.
+   * Example:
+   * ```js
+   * cache.counts('members', '123456789123456789', (m) => m.presence.status === 'online', (m) => m.presence.status === 'idle')
+   * // will return [ number, number ]. first number = online members, second = idle members.
+   * ```
+   * @param keyspace - keyspace in which to execute
+   * @param storage - storage in which to execute
+   * @param predicates - functions to execute (separated by commas: () => true, () => false)
+   * */
+  counts?<K = string, V = any, P extends CacheProvider = CacheProvider>(
+    keyspace: string, storage: CacheStorageKey,
+    ...predicates: ((value: V, key: K, provider: P) => boolean | Promise<boolean>)[]
+  ): Promise<number[]>
+
 }

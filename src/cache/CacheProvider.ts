@@ -176,16 +176,37 @@ export interface CacheProvider extends Provider {
    * The order of responses depends on the order of the passed functions.
    * Example:
    * ```js
-   * cache.counts('members', '123456789123456789', (m) => m.presence.status === 'online', (m) => m.presence.status === 'idle')
+   * cache.counts('members', '123456789123456789', [ (m) => m.presence.status === 'online', (m) => m.presence.status === 'idle' ])
    * // will return [ number, number ]. first number = online members, second = idle members.
    * ```
    * @param keyspace - keyspace in which to execute
    * @param storage - storage in which to execute
-   * @param predicates - functions to execute (separated by commas: () => true, () => false)
+   * @param predicates - array of functions to execute
    * */
   counts?<K = string, V = any, P extends CacheProvider = CacheProvider>(
     keyspace: string, storage: CacheStorageKey,
-    ...predicates: ((value: V, key: K, provider: P) => boolean | Promise<boolean>)[]
+    predicates: ((value: V, key: K, provider: P) => boolean | Promise<boolean>)[]
   ): Promise<number[]>
+
+  /**
+   * Extract keys from storage
+   * @param keyspace - keyspace in which to extract
+   * @param storage - storage in which to extract
+   * */
+  keys?<K = string>(keyspace: string, storage: CacheStorageKey): Promise<K[]>
+
+  /**
+   * Extract values from storage
+   * @param keyspace - keyspace in which to extract
+   * @param storage - storage in which to extract
+   * */
+  values?<V = any>(keyspace: string, storage: CacheStorageKey): Promise<V[]>
+
+  /**
+   * Extract keys and values from storage
+   * @param keyspace - keyspace in which to extract
+   * @param storage - storage in which to extract
+   * */
+  entries?<K = string, V = any>(keyspace: string, storage: CacheStorageKey): Promise<Array<[ K, V ]>>
 
 }

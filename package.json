@@ -1,6 +1,6 @@
 {
   "name": "@discordoo/providers",
-  "version": "0.8.2",
+  "version": "0.9.3",
   "description": "Interfaces that must be implemented by custom providers for Discordoo (typescript only).",
   "main": "dist/index.js",
   "types": "types/index.d.ts",

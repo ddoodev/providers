@@ -9,9 +9,17 @@ import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
  *
  * The gateway provider operates events and connects the bot's shards to Discord.
  *
- * **All events must eventually pass through the gateway manager**.
- * Gateway manager emits events to the client and manages events overload protection.
- * If you use a message broker, you still must send events to the client through the gateway manager.
+ * **All events expect custom must eventually pass through the gateway manager**. (GatewayManager.emit())
+ * If your provider adds new events, these events should not pass through the GatewayManager.
+ * Gateway manager emits events to the client and manages events overload protection and manages cache.
+ * If you use a message broker, you still must send events to the client through the gateway manager (on the recipient's side).
+ *
+ * **WARNING:**
+ * YOUR PROVIDER MUST EMIT
+ * [GUILD_MEMBERS_CHUNK](https://discord.com/developers/docs/topics/gateway#guild-members-chunk-guild-members-chunk-event-fields)
+ * EVENT WITH RAW DATA TO THE GATEWAY MANAGER REGARDLESS OF THE SITUATION.
+ * IF YOU DON'T DO THIS, THE ClientMembersManager#fetchMany AND ClientMembersManager#fetch
+ * AND ALL DEPENDENT FUNCTIONS WILL RETURN AN INFINITE PROMISE OR TIMEOUT ERROR.
  *
  * Gateway [rate limits](https://discord.com/developers/docs/topics/gateway#rate-limiting) must be handled by the provider itself.
  *
@@ -80,6 +88,4 @@ export interface GatewayProvider extends Provider {
 
   ping(shards?: number[]): number | Array<[ number, number ]>
 
-  // TODO: presenceUpdate
-  // TODO: requestGuildMembers
 }

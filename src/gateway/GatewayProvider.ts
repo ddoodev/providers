@@ -17,9 +17,15 @@ import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
  * **WARNING:**
  * YOUR PROVIDER MUST EMIT
  * [GUILD_MEMBERS_CHUNK](https://discord.com/developers/docs/topics/gateway#guild-members-chunk-guild-members-chunk-event-fields)
- * EVENT WITH RAW DATA TO THE GATEWAY MANAGER REGARDLESS OF THE SITUATION.
- * IF YOU DON'T DO THIS, THE ClientMembersManager#fetchMany AND ClientMembersManager#fetch
+ * AND
+ * [READY](https://discord.com/developers/docs/topics/gateway#ready)
+ * AND
+ * [GUILD_CREATE](https://discord.com/developers/docs/topics/gateway#guild-create)
+ * EVENTS WITH RAW DATA TO THE GATEWAY MANAGER REGARDLESS OF THE SITUATION.
+ * IF YOU DON'T EMIT GUILD_MEMBERS_CHUNK, THE ClientMembersManager#fetchMany AND ClientMembersManager#fetch
  * AND ALL DEPENDENT FUNCTIONS WILL RETURN AN INFINITE PROMISE OR TIMEOUT ERROR.
+ * IF YOU DON'T EMIT READY AND GUILD_CREATE, THE CLIENT WILL NEVER BE ABLE TO START CORRECTLY.
+ * IF RUNNING IN SHARDING INSTANCE, THE CLIENT WILL BE CYCLICALLY RESTARTED.
  *
  * Gateway [rate limits](https://discord.com/developers/docs/topics/gateway#rate-limiting) must be handled by the provider itself.
  *
@@ -52,10 +58,11 @@ export interface GatewayProvider extends Provider {
 
   /**
    * Emit event to the gateway manager or remote host (e.g. rabbitmq), but not to the client directly
+   * @param shardId - id of shard from which the event came
    * @param event - event name to emit
    * @param data - data to emit with the event
    * */
-  emit(event: string, ...data: any[]): unknown
+  emit(shardId: number, event: string, ...data: any[]): unknown
 
   /**
    * Send some data to the gateway

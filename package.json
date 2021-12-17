@@ -7,9 +7,11 @@
   "scripts": {
     "build": "ttsc -p tsconfig.json",
     "lint": "eslint",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "docs": "npx tapok ./docs.json -c typedoc.js"
   },
   "devDependencies": {
+    "@discordoo/tapok": "^2.0.0",
     "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",

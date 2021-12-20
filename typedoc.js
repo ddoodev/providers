@@ -1,5 +1,5 @@
 module.exports = {
-  json: './docs.json',
+  json: './docs/docs.json',
   name: 'Providers',
   excludeExternals: true,
 }

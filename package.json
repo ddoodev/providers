@@ -11,7 +11,7 @@
     "docs": "npx tapok ./docs/docs.json -c typedoc.js -e ./src/index.ts"
   },
   "devDependencies": {
-    "@discordoo/tapok": "^2.0.12",
+    "@discordoo/tapok": "^2.0.13",
     "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",

@@ -8,7 +8,7 @@
     "build": "ttsc -p tsconfig.json",
     "lint": "eslint",
     "prepublishOnly": "npm run build",
-    "docs": "npx tapok ./docs/docs.json -c typedoc.js -e ./src/index.ts"
+    "docs": "npx tapok ./docs/docs.json -c typedoc.js"
   },
   "devDependencies": {
     "@discordoo/tapok": "^2.0.19",

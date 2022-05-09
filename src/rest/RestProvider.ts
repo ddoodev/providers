@@ -6,9 +6,9 @@ import { Provider } from '@src/Provider'
 /**
  * Represents a rest provider. Custom rest providers must implement it.
  *
- * **Must not throw any errors**. Use RestFailedResponse instead.
+ * 1. **Must not throw any errors**. Use RestFailedResponse instead.
  *
- * Optionally can handle rate limits. Built-in rate limits handling can be disabled in the rest options.
+ * 2. Optionally can handle rate limits. Built-in rate limits handling can be disabled in the rest options.
  *
  * @see https://github.com/Discordoo/discordoo/blob/develop/src/rest/DefaultRestProvider.ts
  * */

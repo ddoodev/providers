@@ -7,14 +7,14 @@ import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
 /**
  * Represents a gateway provider. Custom gateway providers must implement it.
  *
- * The gateway provider operates events and connects the bot's shards to Discord.
+ * 1. The gateway provider operates events and connects the bot's shards to Discord.
  *
- * **All events expect custom must eventually pass through the gateway manager**. (GatewayManager.emit())
+ * 2. **All events expect custom must eventually pass through the gateway manager**. (GatewayManager.emit())
  * If your provider adds new events, these events should not pass through the GatewayManager.
  * Gateway manager emits events to the client and manages events overload protection and manages cache.
  * If you use a message broker, you still must send events to the client through the gateway manager (on the recipient's side).
  *
- * **WARNING:**
+ * 3. **WARNING:**
  * YOUR PROVIDER MUST EMIT
  * [GUILD_MEMBERS_CHUNK](https://discord.com/developers/docs/topics/gateway#guild-members-chunk-guild-members-chunk-event-fields)
  * AND
@@ -27,7 +27,7 @@ import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
  * IF YOU DON'T EMIT READY AND GUILD_CREATE, THE CLIENT WILL NEVER BE ABLE TO START CORRECTLY.
  * IF RUNNING IN SHARDING INSTANCE, THE CLIENT WILL BE CYCLICALLY RESTARTED.
  *
- * Gateway [rate limits](https://discord.com/developers/docs/topics/gateway#rate-limiting) must be handled by the provider itself.
+ * 4. Gateway [rate limits](https://discord.com/developers/docs/topics/gateway#rate-limiting) must be handled by the provider itself.
  *
  * @see https://github.com/Discordoo/discordoo/blob/develop/src/gateway/DefaultGatewayProvider.ts
  * */

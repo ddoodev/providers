@@ -7,7 +7,7 @@ import { Provider } from '@src/Provider'
  * **IT IS DANGEROUS TO CREATE YOUR OWN PROVIDERS OF THIS TYPE.
  * THIS PROVIDER HAS ACCESS TO ABSOLUTELY ANY INFORMATION INSIDE THE BOT.
  * THIS PROVIDER IS ABLE TO DO ABSOLUTELY ANYTHING WITH THE BOT.
- * READ THE SECURITY INSTRUCTIONS IN THE DESCRIPTION OF THE [listen()](#method:listen) METHOD.**
+ * READ THE SECURITY INSTRUCTIONS IN THE DESCRIPTION OF THE listen() METHOD.**
  *
  * Represents a internet ipc transport provider. Custom internet ipc transport providers must implement it.
  *

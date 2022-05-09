@@ -2,6 +2,7 @@ import { IpcPacketLike } from '@src/ipc/IpcPacketLike'
 import { IpcTransportProviderEventCallback } from '@src/ipc/IpcTransportProviderEventCallback'
 import { IpcShardIdentificationOptions } from '@src/ipc/IpcShardIdentificationOptions'
 import { Provider } from '@src/Provider'
+import { IpcManagerIdentificationOptions } from '@src/ipc/IpcManagerIdentificationOptions'
 
 /**
  * **IT IS DANGEROUS TO CREATE YOUR OWN PROVIDERS OF THIS TYPE.
@@ -41,7 +42,7 @@ export interface InternetIpcTransportProvider extends Provider {
    * YOUR PROVIDER WILL HANDLE THE MANAGEMENT COMMANDS OF THE ENTIRE BOT.
    * **IT WILL EVENTUALLY BE POSSIBLE TO PULL THE BOT TOKEN THROUGH YOUR PROVIDER IF YOU DON'T TAKE CARE OF SECURITY.**
    * */
-  listen(identity: IpcShardIdentificationOptions): Promise<void>
+  listen(identity: IpcManagerIdentificationOptions): Promise<void>
 
   /**
    * Connect to the specified sharding manager.
@@ -56,7 +57,7 @@ export interface InternetIpcTransportProvider extends Provider {
    * 4. Your provider must return the negative number of the sharding manager.
    * @param identity - Identification information for each sharding manager.
    * */
-  connect(identity: IpcShardIdentificationOptions): Promise<number>
+  connect(identity: IpcManagerIdentificationOptions): Promise<number>
 
   /**
    * Disconnect from the specified sharding manager.
@@ -65,14 +66,14 @@ export interface InternetIpcTransportProvider extends Provider {
    * [IpcEvents](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcEvents).DISCONNECTED as t.
    * @param identity - Identification information for each sharding manager.
    * */
-  disconnect(identity: IpcShardIdentificationOptions): Promise<void>
+  disconnect(identity: IpcManagerIdentificationOptions): Promise<void>
 
   /**
    * Send the package to the specified shard.
    * @param identity - Identification information for each sharding manager.
    * @param packet - Standardized data in JSON.
    * */
-  send(identity: IpcShardIdentificationOptions, packet: IpcPacketLike): void
+  send(identity: IpcManagerIdentificationOptions, packet: IpcPacketLike): void
 
   /**
    * Connect the listener. Each incoming packet must be sent to all signed listeners at the same time.

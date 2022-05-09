@@ -17,8 +17,10 @@ import { Provider } from '@src/Provider'
  * Your provider must operate multiple connections within a single instance.
  * 4. Your provider should not take more than 100 milliseconds to send a single packet through an ideal connection (localhost).
  * 5. **Your provider should handle disconnects.**
- * When the sharding manager is disconnected, your provider should call the IpcOpCodes.ERROR op code with
- * the IpcEvents.DISCONNECTED event in all the listeners connected to the sharding manager.
+ * When the sharding manager is disconnected, your provider should call the
+ * [IpcOpCodes](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcOpCodes).ERROR op code with
+ * the [IpcEvents](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcEvents).DISCONNECTED
+ * event in all the listeners connected to the sharding manager.
  * Then your provider should disable these listeners.
  * */
 export interface InternetIpcTransportProvider extends Provider {
@@ -58,7 +60,9 @@ export interface InternetIpcTransportProvider extends Provider {
 
   /**
    * Disconnect from the specified sharding manager.
-   * Your provider should emit event (packet) with IpcOpCodes.DISPATCH op code and IpcEvents.DISCONNECTED as t.
+   * Your provider should emit event (packet) with
+   * [IpcOpCodes](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcOpCodes).DISPATCH op code and
+   * [IpcEvents](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcEvents).DISCONNECTED as t.
    * @param identity - Identification information for each sharding manager.
    * */
   disconnect(identity: IpcShardIdentificationOptions): Promise<void>

@@ -16,7 +16,9 @@ import { Provider } from '@src/Provider'
  * 4. Your provider should not take more than 10 milliseconds to send a single packet.
  *
  * 5. **Your provider should handle outages automatically.**
- * When the shard is disconnected, your provider should call the IpcOpCodes.ERROR op code with the IpcEvents.DISCONNECTED event in all
+ * When the shard is disconnected, your provider should call the
+ * [IpcOpCodes](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcOpCodes).ERROR op code with the
+ * [IpcEvents](https://ddoo.dev/docs/api/Providers/latest/ipc/enums/IpcEvents).DISCONNECTED event in all
  * the listeners connected to the shard. Then your provider should disable these listeners.
  * */
 export interface LocalIpcTransportProvider extends Provider {

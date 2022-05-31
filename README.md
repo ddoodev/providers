@@ -8,7 +8,7 @@
     <span> · </span>
     <a href="https://ddoo.dev/prov">Docs</a>
     <span> · </span>
-    <a href="https://github.com/Discordoo/guide/blob/develop/CONTRIBUTING.md">Contribute</a>
+    <a href="https://github.com/ddoodev/guide/blob/develop/CONTRIBUTING.md">Contribute</a>
   </b>
 </p>
 

@@ -24,7 +24,7 @@ import { CacheStorageKey } from '@src/cache/CacheStorageKey'
  *
  * The provider must give the cache in the form in which it stores it and not try to serialize it into classes.
  *
- * @see https://github.com/Discordoo/discordoo/blob/develop/src/cache/DefaultCacheProvider.ts
+ * @see https://github.com/ddoodev/discordoo/blob/develop/src/cache/DefaultCacheProvider.ts
  */
 export interface CacheProvider extends Provider {
   /**

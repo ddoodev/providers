@@ -1,6 +1,6 @@
 {
   "name": "@discordoo/providers",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Interfaces that must be implemented by custom providers for Discordoo (typescript only).",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -22,17 +22,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Discordoo/providers.git"
+    "url": "git+https://github.com/ddoodev/providers.git"
   },
   "author": {
     "name": "Mirdukkk",
-    "email": "dev@discordoo.xyz"
+    "email": "dev@ddoo.dev"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Discordoo/providers/issues"
+    "url": "https://github.com/ddoodev/providers/issues"
   },
-  "homepage": "https://github.com/Discordoo/providers#readme",
+  "homepage": "https://github.com/ddoodev/providers#readme",
   "engines": {
     "node": ">=12.18"
   },

@@ -29,7 +29,7 @@ import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
  *
  * 4. Gateway [rate limits](https://discord.com/developers/docs/topics/gateway#rate-limiting) must be handled by the provider itself.
  *
- * @see https://github.com/Discordoo/discordoo/blob/develop/src/gateway/DefaultGatewayProvider.ts
+ * @see https://github.com/ddoodev/discordoo/blob/develop/src/gateway/DefaultGatewayProvider.ts
  * */
 export interface GatewayProvider extends Provider {
   /**

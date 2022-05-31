@@ -10,7 +10,7 @@ import { Provider } from '@src/Provider'
  *
  * 2. Optionally can handle rate limits. Built-in rate limits handling can be disabled in the rest options.
  *
- * @see https://github.com/Discordoo/discordoo/blob/develop/src/rest/DefaultRestProvider.ts
+ * @see https://github.com/ddoodev/discordoo/blob/develop/src/rest/DefaultRestProvider.ts
  * */
 export interface RestProvider extends Provider {
 

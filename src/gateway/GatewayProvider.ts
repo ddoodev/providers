@@ -3,6 +3,7 @@ import { Provider } from '@src/Provider'
 import { GatewayBotInfo } from '@src/gateway/GatewayBotInfo'
 import { GatewaySendOptions } from '@src/gateway/GatewaySendOptions'
 import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
+import { GatewayReceivePayloadLike } from '@src/gateway/GatewayReceivePayloadLike'
 
 /**
  * Represents a gateway provider. Custom gateway providers must implement it.
@@ -59,10 +60,9 @@ export interface GatewayProvider extends Provider {
   /**
    * Emit event to the gateway manager or remote host (e.g. rabbitmq), but not to the client directly
    * @param shardId - id of shard from which the event came
-   * @param event - event name to emit
-   * @param data - data to emit with the event
+   * @param data - raw ws packet data
    * */
-  emit(shardId: number, event: string, ...data: any[]): unknown
+  emit(shardId: number, data: GatewayReceivePayloadLike): unknown
 
   /**
    * Send some data to the gateway

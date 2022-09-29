@@ -1,6 +1,5 @@
 import { IpcPacketLike } from '@src/ipc/IpcPacketLike'
 import { IpcTransportProviderEventCallback } from '@src/ipc/IpcTransportProviderEventCallback'
-import { IpcShardIdentificationOptions } from '@src/ipc/IpcShardIdentificationOptions'
 import { Provider } from '@src/Provider'
 import { IpcManagerIdentificationOptions } from '@src/ipc/IpcManagerIdentificationOptions'
 

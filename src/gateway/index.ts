@@ -1,3 +1,4 @@
+export { GatewayReceivePayloadLike } from '@src/gateway/GatewayReceivePayloadLike'
 export { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
 export { GatewaySendOptions } from '@src/gateway/GatewaySendOptions'
 export { GatewayShardsInfo } from '@src/gateway/GatewayShardsInfo'

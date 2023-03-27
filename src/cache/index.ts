@@ -1,2 +1,2 @@
-export { CacheProvider } from '@src/cache/CacheProvider'
-export { CacheStorageKey } from '@src/cache/CacheStorageKey'
+export { CacheProvider } from './CacheProvider'
+export { CacheStorageKey } from './CacheStorageKey'

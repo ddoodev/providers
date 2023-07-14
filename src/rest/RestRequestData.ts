@@ -8,7 +8,7 @@ export interface RestRequestData {
   /** Url path: https://www.youtube.com/ **watch?v=g0WmiI2QUw0** */
   path: string
   /** Files to attach (empty array if 0) */
-  attachments: RawAttachment[]
+  attachments?: RawAttachment[]
   /** Request body */
   body?: Record<any, any>
   /** Request headers */

@@ -1,3 +1,4 @@
+/** Base interface for all providers */
 export interface Provider {
   /**
    * The init() function exists to tell the provider when the client is starting.

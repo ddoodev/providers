@@ -1,7 +1,7 @@
-import { IpcPacketLike } from '../../src/ipc/IpcPacketLike'
-import { IpcTransportProviderEventCallback } from '../../src/ipc/IpcTransportProviderEventCallback'
-import { Provider } from '../../src/Provider'
-import { IpcManagerIdentificationOptions } from '../../src/ipc/IpcManagerIdentificationOptions'
+import { IpcPacketLike } from '@src/ipc/IpcPacketLike'
+import { IpcTransportProviderEventCallback } from '@src/ipc/IpcTransportProviderEventCallback'
+import { Provider } from '@src/Provider'
+import { IpcManagerIdentificationOptions } from '@src/ipc/IpcManagerIdentificationOptions'
 
 /**
  * **IT IS DANGEROUS TO CREATE YOUR OWN PROVIDERS OF THIS TYPE.

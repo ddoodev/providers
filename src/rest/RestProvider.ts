@@ -1,7 +1,7 @@
-import { RestFinishedResponse } from '../../src/rest/RestFinishedResponse'
-import { RestRequestOptions } from '../../src/rest/RestRequestOptions'
-import { RestRequestData } from '../../src/rest/RestRequestData'
-import { Provider } from '../../src/Provider'
+import { RestFinishedResponse } from '@src/rest/RestFinishedResponse'
+import { RestRequestOptions } from '@src/rest/RestRequestOptions'
+import { RestRequestData } from '@src/rest/RestRequestData'
+import { Provider } from '@src/Provider'
 
 /**
  * Represents a rest provider. Custom rest providers must implement it.

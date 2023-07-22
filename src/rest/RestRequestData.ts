@@ -1,5 +1,5 @@
-import { RestRequestMethods } from '../../src/rest/RestRequestMethods'
-import { RawAttachment } from '../../src/rest/RawAttachment'
+import { RestRequestMethods } from '@src/rest/RestRequestMethods'
+import { RawAttachment } from '@src/rest/RawAttachment'
 
 /** Data for the rest request */
 export interface RestRequestData {

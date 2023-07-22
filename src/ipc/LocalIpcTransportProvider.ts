@@ -1,7 +1,7 @@
-import { IpcPacketLike } from '../../src/ipc/IpcPacketLike'
-import { IpcTransportProviderEventCallback } from '../../src/ipc/IpcTransportProviderEventCallback'
-import { IpcShardIdentificationOptions } from '../../src/ipc/IpcShardIdentificationOptions'
-import { Provider } from '../../src/Provider'
+import { IpcPacketLike } from '@src/ipc/IpcPacketLike'
+import { IpcTransportProviderEventCallback } from '@src/ipc/IpcTransportProviderEventCallback'
+import { IpcShardIdentificationOptions } from '@src/ipc/IpcShardIdentificationOptions'
+import { Provider } from '@src/Provider'
 
 /**
  * Represents a local ipc transport provider. Custom local ipc transport providers must implement it.

@@ -1,5 +1,5 @@
-import { Provider } from '@src/Provider'
-import { CacheStorageKey } from '@src/cache/CacheStorageKey'
+import { Provider } from '../../src/Provider'
+import { CacheStorageKey } from '../../src/cache/CacheStorageKey'
 
 /**
  * Represents a cache provider. Custom caching providers must implement it.

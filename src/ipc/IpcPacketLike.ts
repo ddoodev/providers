@@ -1,4 +1,3 @@
-/** Represents what IPC packets look like approximately. */
 export interface IpcPacketLike {
   /** IPC operating codes. Example: IpcOpCodes.EMERGENCY (0) */
   op: number

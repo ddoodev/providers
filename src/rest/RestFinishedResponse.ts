@@ -1,5 +1,5 @@
-import { RestSuccessfulResponse } from '@src/rest/RestSuccessfulResponse'
-import { RestFailedResponse } from '@src/rest/RestFailedResponse'
+import { RestSuccessfulResponse } from '../../src/rest/RestSuccessfulResponse'
+import { RestFailedResponse } from '../../src/rest/RestFailedResponse'
 
 /**
  * Just type alias because we don't like use ctrl+c and ctrl+v

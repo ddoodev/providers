@@ -1,4 +1,3 @@
-/** GatewayProvider.send() options */
 export interface GatewaySendOptions {
   /** Shards to send data to */
   shards?: number[]

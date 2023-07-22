@@ -1,9 +1,3 @@
-/*
- Based on https://github.com/discordjs/discord-api-types/blob/d1498c3ce2eaea11c9946726ef758f7de489253b/payloads/v9/gateway.ts
- (MIT license)
-*/
-
-/** https://discord.com/developers/docs/topics/gateway#get-gateway-bot */
 export interface GatewayBotInfo {
   /** The WSS URL that can be used for connecting to the gateway */
   url: string

@@ -1,4 +1,4 @@
-import { AuthLike } from '@src/rest/AuthLike'
+import { AuthLike } from '../../src/rest/AuthLike'
 
 /** Options for the rest request */
 export interface RestRequestOptions {

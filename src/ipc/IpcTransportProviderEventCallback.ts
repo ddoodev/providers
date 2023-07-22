@@ -1,4 +1,4 @@
-import { IpcPacketLike } from '@src/ipc/IpcPacketLike'
+import { IpcPacketLike } from '../../src/ipc/IpcPacketLike'
 
 /**
  * Callback for IPC events listeners.

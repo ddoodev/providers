@@ -1,9 +1,9 @@
-import { GatewayShardsInfo } from '@src/gateway/GatewayShardsInfo'
-import { Provider } from '@src/Provider'
-import { GatewayBotInfo } from '@src/gateway/GatewayBotInfo'
-import { GatewaySendOptions } from '@src/gateway/GatewaySendOptions'
-import { GatewaySendPayloadLike } from '@src/gateway/GatewaySendPayloadLike'
-import { GatewayReceivePayloadLike } from '@src/gateway/GatewayReceivePayloadLike'
+import { GatewayShardsInfo } from '../../src/gateway/GatewayShardsInfo'
+import { Provider } from '../../src/Provider'
+import { GatewayBotInfo } from '../../src/gateway/GatewayBotInfo'
+import { GatewaySendOptions } from '../../src/gateway/GatewaySendOptions'
+import { GatewaySendPayloadLike } from '../../src/gateway/GatewaySendPayloadLike'
+import { GatewayReceivePayloadLike } from '../../src/gateway/GatewayReceivePayloadLike'
 
 /**
  * Represents a gateway provider. Custom gateway providers must implement it.

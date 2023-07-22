@@ -1,4 +1,3 @@
-/** Base for all rest provider responses */
 export interface RestResponse {
   /** Whether request executed successfully or not */
   success: boolean

@@ -1,4 +1,4 @@
-import { GatewayOpCodes } from '@src/gateway/GatewayOpCodes'
+import { GatewayOpCodes } from '../../src/gateway/GatewayOpCodes'
 
 export interface GatewayReceivePayloadLike {
   op: GatewayOpCodes

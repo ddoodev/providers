@@ -8,4 +8,6 @@ export interface RestRequestOptions {
   auth?: AuthLike
   /** Whether use any auth for request or not */
   useAuth?: boolean
+  /** Move body fields to multipart data with original key-value (ignore payload_json). Suitable for stickers endpoints */
+  bodyAsMultipart?: boolean
 }
